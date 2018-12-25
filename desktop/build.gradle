@@ -46,4 +46,5 @@ task afterEclipseImport(description: "Post processing after project generation",
     }
 }
 dependencies {
+    implementation files('src/libs/gdx-tools.jar')
 }
