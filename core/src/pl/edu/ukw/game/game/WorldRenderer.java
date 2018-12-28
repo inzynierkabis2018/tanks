@@ -18,7 +18,7 @@ public class WorldRenderer implements Disposable {
     }
 
     public void render() {
-        renderTestObjects();
+        renderObjects();
     }
 
     public void resize(int width, int height) {
@@ -38,10 +38,15 @@ public class WorldRenderer implements Disposable {
         camera.update();
     }
 
-    private void renderTestObjects() {
+    private void renderObjects() {
         batch.setProjectionMatrix(camera.combined);
         batch.begin();
-        worldController.playerOne.render(batch);
+        if (worldController.player.isConnected()) {
+            worldController.player.render(batch);
+        }
+        if (worldController.ally.isConnected()) {
+            worldController.ally.render(batch);
+        }
         batch.end();
     }
 }
