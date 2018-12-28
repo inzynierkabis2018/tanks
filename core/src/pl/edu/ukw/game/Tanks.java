@@ -5,13 +5,10 @@ import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.graphics.GL20;
-import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 import pl.edu.ukw.game.game.Assets;
 import pl.edu.ukw.game.game.WorldController;
 import pl.edu.ukw.game.game.WorldRenderer;
-import pl.edu.ukw.networkingentities.Request;
 
 public class Tanks extends ApplicationAdapter {
     private static final String TAG = Tanks.class.getName();
@@ -57,6 +54,7 @@ public class Tanks extends ApplicationAdapter {
 
     @Override
     public void dispose() {
+        TanksClient.instance.close();
         worldRenderer.dispose();
         Assets.instance.dispose();
     }
