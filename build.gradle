@@ -100,7 +100,9 @@ project(":core") {
         compile project(":networking-entities")
         compile "com.badlogicgames.gdx:gdx:$gdxVersion"
         compile "com.badlogicgames.gdx:gdx-box2d:$gdxVersion"
-        
+        compile "com.esotericsoftware:kryonet:2.22.0-RC1"
+        compile group: 'com.google.guava', name: 'guava', version: '24.1-jre'
+
     }
 }
 
@@ -110,7 +112,8 @@ project(":server") {
 
     dependencies {
         compile project(":networking-entities")
-        compile group: 'com.esotericsoftware', name: 'kryonet', version: '2.22.0-RC1'
+        compile "com.esotericsoftware:kryonet:2.22.0-RC1"
+        compile group: 'com.google.guava', name: 'guava', version: '24.1-jre'
         testCompile 'junit:junit:4.12'
     }
 }
