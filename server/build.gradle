@@ -1,4 +1,6 @@
-apply plugin: "java"
+plugins {
+    id "java"
+}
 
 sourceSets.main.java.srcDirs = ["src/"]
 sourceCompatibility = 1.8
@@ -8,5 +10,5 @@ repositories {
 }
 
 dependencies {
-
+    compile "com.esotericsoftware:kryonet:2.22.0-RC1"
 }
